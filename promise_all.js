@@ -38,6 +38,7 @@ function resizeFile (fileName) {
     })
 }
 
+console.log("starting program")
 Promise.all([
     download("http://cb.lk/logo.png"),
     download("http://cb.lk/banner.png"),
