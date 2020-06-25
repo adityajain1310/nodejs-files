@@ -43,6 +43,8 @@ function resizeFile (fileName) {
         console.log("resized file is at: " + resizedFile)
     })
 })*/
+console.log("Starting the Program!!!")
+console.log("program has started")
 
 download("http://cb.lk/logo.png")
     .then(resizeFile)
