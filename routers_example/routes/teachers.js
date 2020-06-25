@@ -6,6 +6,13 @@ let teachers = [
 ]
 
 route.get('/', (req, res) => res.send(teachers))
+route.post('/', (req, res) => {
+    teachers.push({
+        name: req.body.name,
+        subject: req.body.subject
+    })
+    res.send(teachers)
+})
 route.get('/add', (req, res) => {
     teachers.push({
         name: req.query.name,
@@ -13,6 +20,12 @@ route.get('/add', (req, res) => {
     })
     res.send(teachers)
 })
-route.get('/:id', (req, res) => res.send(teachers[req.params.id]))
+route.get('/:id', (req, res) => {
+    /*if(isNaN(parseInt(req.params.id))) {                      Add this if /add is added after /:id
+        next();
+    }*/
+    res.send(teachers[req.params.id])
+})
+    
 
 module.exports = route
